@@ -1,0 +1,16 @@
+<virtual-scroller class="virtual-scroller-viewport table-responsive" #scroll [items]="rows">
+    <table class="table table-hover table-sm table-striped">
+        <thead #header class="app-table-head">
+            <tr>
+                <th scope="col" *ngFor="let title of head; index as i" [title]="title">
+                    <a href="#" (click)="sortByIndexClick(i)">{{title}}</a></th>
+            </tr>
+        </thead>
+        <tbody class="app-table-body" #container>
+
+            <tr *ngFor="let row of scroll.viewPortItems">
+                <td *ngFor="let column of row" [title]="column.get()">{{column.get()}}</td>
+            </tr>
+        </tbody>
+    </table>
+</virtual-scroller>

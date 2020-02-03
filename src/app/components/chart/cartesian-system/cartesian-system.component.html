@@ -1,0 +1,13 @@
+<!-- Draw x cartesian lines -->
+<svg:g *ngFor="let x of cartesianXPositions">
+    <svg:polyline [attr.fill]="fill" [attr.stroke]="stroke" [attr.points]="drawHorizontalLine(x.position)" />
+    <svg:text [attr.transform]="'rotate(30 '+x.position+','+(canvasHeight - 30)+')'" font-size="11" [attr.x]="x.position" [attr.y]="canvasHeight - 30" [attr.fill]="fill">{{x.value}}
+    </svg:text>
+</svg:g>
+
+<!-- Draw y cartesian lines -->
+<svg:g *ngFor="let y of cartesianYPositions">
+    <svg:polyline [attr.fill]="fill" [attr.stroke]="stroke" [attr.points]="drawVerticalLine(y.position)" />
+    <svg:text [attr.transform]="'rotate(30 10,'+y.position+')'" font-size="11" [attr.x]="10" [attr.y]="y.position" [attr.fill]="fill">
+        {{y.value}}</svg:text>
+</svg:g>

@@ -1,0 +1,3 @@
+<svg:circle *ngFor="let p of series.points" [attr.cx]="p.x" [attr.cy]="p.y" [attr.r]="p.size / 2"
+    [attr.stroke]="p.color" [attr.stroke-width]="2" (mouseenter)="mouseEnter(p)" (mouseleave)="mouseLeave(p)"
+    [attr.fill]="p.secondaryColor" />

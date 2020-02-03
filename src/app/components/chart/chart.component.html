@@ -1,0 +1,42 @@
+<div class="chart-card">
+
+  <p class="chart-title">{{title}}</p>
+
+  <div class="chart-container">
+
+    <svg  [attr.width]="width" [attr.height]="height">
+
+      <!-- 
+
+        Draw series cartesian system
+
+      -->
+      <svg:g app-cartesian-system [padding]="sysPadding" [canvasHeight]="height" [canvasWidth]="width" [xAxis]="xAxis"
+        [yExtremeValues]="extremeValues"></svg:g>
+
+      <!-- 
+
+        Draw series BAR diagram
+
+      -->
+      <svg:g *ngIf="type=='BAR'">
+        <svg:g *ngFor="let s of series; index as i" app-bar-diagram [index]="i" [series]="s" [yAxis]="yAxisPosition"
+          (mouseEvent)="onMouseEvent($event)"></svg:g>
+      </svg:g>
+
+      <!-- 
+
+        Draw series LINE diagram
+
+      -->
+      <svg:g *ngIf="type=='LINE'">
+        <svg:g *ngFor="let s of series" app-linear-diagram [series]="s"></svg:g>
+        <svg:g *ngFor="let s of series" app-points-diagram [series]="s" (mouseEvent)="onMouseEvent($event)"></svg:g>
+      </svg:g>
+
+
+    </svg>
+
+    <app-svg-tooltip [point]="tooltipPoint"></app-svg-tooltip>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<svg:rect 
+    *ngFor="let p of rectangles" 
+    [attr.x]="p.x" 
+    [attr.y]="p.y"
+    [attr.rx]="2" 
+    [attr.width]="p.width"
+    [attr.height]="p.height"
+    [attr.stroke]="p.color" 
+    [attr.stroke-width]="2" 
+    (mouseenter)="mouseEnter(p)" (mouseleave)="mouseLeave(p)"
+    [attr.fill]="p.secondaryColor" />
