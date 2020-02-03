@@ -1,10 +1,6 @@
-import { Injectable } from '@angular/core';
 import { CoordinateModel } from './coordinate-model.service';
 import { HelperService } from 'src/app/services/helper.service';
 
-@Injectable({
-  providedIn: 'root'
-})
 export class SeriesModel {
 
   points: CoordinateModel[];

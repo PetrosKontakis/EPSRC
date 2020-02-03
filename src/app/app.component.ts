@@ -1,9 +1,7 @@
-import { Component } from '@angular/core';
-import HttpHelper from './services/http-helper.service';
-import { map } from 'rxjs/operators'
-import { HelperService } from './services/helper.service';
+import { Component, Inject } from '@angular/core';
+import {HttpHelper} from './services/http-helper.service';
+import { map } from 'rxjs/operators';
 import { CsvModelService } from './models/csv-model.service';
-import { CsvEntityModelService } from './models/csv-entity-model.service';
 
 enum STATES {
   LOADING,
@@ -26,7 +24,7 @@ export class AppComponent {
   daysMaxMin: any;
   daysAvg: any;
 
-  constructor(private api: HttpHelper, private helper: HelperService) {
+  constructor(private api: HttpHelper) {
   }
 
   ngOnInit() {

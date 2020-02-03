@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export default class HttpHelper {
+export class HttpHelper {
 
 
   constructor(private http: HttpClient) {
@@ -13,10 +13,10 @@ export default class HttpHelper {
   }
 
   getSpendTransactions(): Observable<any> {
-
     const httpOptions = {
       responseType: 'text' as 'text',
     };
+    
     return this.http.get(`../assets/data/EPSRCSpendDataJan2015.csv`,
       httpOptions);
 

@@ -1,9 +1,9 @@
 import { Injectable, Output } from '@angular/core';
 import { HelperService } from '../services/helper.service';
 
-@Injectable({
-  providedIn: 'root'
-})
+// @Injectable({
+//   providedIn: 'root'
+// })
 export class CsvEntityModelService {
 
   private value: any;

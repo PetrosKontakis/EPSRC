@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { CsvEntityModelService } from './csv-entity-model.service';
 import { HelperService } from '../services/helper.service';
 
-@Injectable({
-  providedIn: 'root'
-})
+// @Injectable({
+//   providedIn: 'root'
+// })
 export class CsvModelService {
 
   head: string[];
