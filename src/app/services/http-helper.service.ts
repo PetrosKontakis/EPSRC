@@ -17,7 +17,7 @@ export class HttpHelper {
       responseType: 'text' as 'text',
     };
     
-    return this.http.get(`../assets/data/EPSRCSpendDataJan2015.csv`,
+    return this.http.get(`./assets/data/EPSRCSpendDataJan2015.csv`,
       httpOptions);
 
   }
